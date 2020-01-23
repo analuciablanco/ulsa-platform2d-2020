@@ -12,7 +12,7 @@ public class Player : Character2D
 
     void Update()
     {
-        GameplaySystem.TMovementDelta(transform, moveSpeed); 
+        GameplaySystem.TMovementDelta(transform, moveSpeed);
     }
 
     void LateUpdate()
