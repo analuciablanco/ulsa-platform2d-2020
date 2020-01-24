@@ -10,6 +10,20 @@ public class Player : Character2D
         
     }
 
+    private void FixedUpdate() 
+    {
+        if(GameplaySystem.JumpBtn)
+        {
+            if(Grounding)
+            {
+                anim.SetTrigger("jump");
+                GameplaySystem.Jump(rb2D, jumpForce);
+            }
+        }
+
+        anim.SetBool("grounding", Grounding);
+    }
+
     void Update()
     {
         GameplaySystem.TMovementDelta(transform, moveSpeed);
@@ -17,7 +31,7 @@ public class Player : Character2D
 
     void LateUpdate()
     {
-        spr.flipX = flipSprite;
+        spr.flipX = FlipSprite;
         anim.SetFloat("axisX", Mathf.Abs(GameplaySystem.Axis.x));
     }
 }

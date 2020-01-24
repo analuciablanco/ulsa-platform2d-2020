@@ -17,13 +17,13 @@ AnimatorStateMachine:
     m_Position: {x: 290, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8572273591626831223}
-    m_Position: {x: 870, y: 200, z: 0}
+    m_Position: {x: 870, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3764054635006575569}
-    m_Position: {x: 870, y: 270, z: 0}
+    m_Position: {x: 870, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3697421483995845442}
-    m_Position: {x: 600, y: 580, z: 0}
+    m_Position: {x: 870, y: 40, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 5147927517043214281}
@@ -247,6 +247,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: jump
     m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: grounding
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
