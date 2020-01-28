@@ -5,6 +5,8 @@ using Platform2DUtils.GameplaySystem;
 
 public class Player : Character2D 
 {
+    [SerializeField] Score score;
+
     void Start()
     {
         
@@ -33,5 +35,14 @@ public class Player : Character2D
     {
         spr.flipX = FlipSprite;
         anim.SetFloat("axisX", Mathf.Abs(GameplaySystem.Axis.x));
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("collectable"))
+        {
+            Collectable collectable = other.GetComponent<Collectable>();
+            score.AddPoints(collectable.Points);
+            Destroy(other.gameObject);
+        }    
     }
 }
