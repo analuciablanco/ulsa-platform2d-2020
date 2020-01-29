@@ -5,8 +5,6 @@ using Platform2DUtils.GameplaySystem;
 
 public class Player : Character2D 
 {
-    [SerializeField] Score score;
-
     void Start()
     {
         
@@ -41,7 +39,8 @@ public class Player : Character2D
         if(other.CompareTag("collectable"))
         {
             Collectable collectable = other.GetComponent<Collectable>();
-            score.AddPoints(collectable.Points);
+            Gamemanager.instance.Score.AddPoints(collectable.Points);
+            //score.AddPoints(collectable.Points);
             Destroy(other.gameObject);
         }    
     }
