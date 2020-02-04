@@ -60,6 +60,9 @@ TagManager:
   - name: bush
     uniqueID: 1699279703
     locked: 0
+  - name: enemy
+    uniqueID: 492685105
+    locked: 0
   - name: player
     uniqueID: 3783394695
     locked: 0
