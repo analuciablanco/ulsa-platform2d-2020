@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Platform2DUtils.GameplaySystem;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IFlip
 {
     [SerializeField] float moveSpeed = 3f;
 
@@ -23,5 +24,10 @@ public class Enemy : MonoBehaviour
             timer = 0;
             dir = dir == Vector2.right ? Vector2.left : Vector2.right;
         }
+    }
+
+    public void FlipSprite()
+    {
+        throw new System.NotImplementedException();
     }
 }
