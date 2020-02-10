@@ -23,12 +23,9 @@ public class Enemy : Character2D
         {
             timer = 0;
             dir = dir == Vector2.right ? Vector2.left : Vector2.right;
-            //FlipSprite();
+            
+            IFlip flip = new NpcFlip();
+            spr.flipX = flip.FlipSprite(dir.x, spr);
         }
     }
-
-    /* public bool FlipSprite
-    {
-        get => dir.x > 0 ? false : true;
-    } */
 }

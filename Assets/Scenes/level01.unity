@@ -244,6 +244,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  maxVel: 5
 --- !u!50 &34760369
 Rigidbody2D:
   serializedVersion: 4
@@ -3106,6 +3107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acee0ecd6eb533749831d4fee754f922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 7
+  moveSpeed: 2
+  rayColor: {r: 1, g: 0, b: 1, a: 1}
+  rayDistance: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   moveSpeed: 2
   delay: 3
   dir: {x: 1, y: 0}

@@ -22,6 +22,16 @@ namespace Platform2DUtils.GameplaySystem
         }
 
         /// <summary>
+        /// Moves player in Horizontal axis with keyboard inputs using force.
+        /// </summary>
+        /// <param name="rb2D">Rigidbody2D component of the player.</param>
+        /// <param name="moveSpeed">The coeficient of speed.</param>
+        public static void MovementAddForce(Rigidbody2D rb2D, float moveSpeed)
+        {
+            rb2D.AddForce(Vector2.right * moveSpeed * Axis.x, ForceMode2D.Impulse);
+        }
+
+        /// <summary>
         /// Moves player in Horizontal axis with keyboard inputs and multiplies by delta time.
         /// </summary>
         /// <param name="t">Transform component of the player.</param>
