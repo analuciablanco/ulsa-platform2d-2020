@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Platform2DUtils.GameplaySystem;
 
-public class Enemy : MonoBehaviour, IFlip
+public class Enemy : Character2D
 {
     [SerializeField] float moveSpeed = 3f;
 
@@ -23,11 +23,12 @@ public class Enemy : MonoBehaviour, IFlip
         {
             timer = 0;
             dir = dir == Vector2.right ? Vector2.left : Vector2.right;
+            //FlipSprite();
         }
     }
 
-    public void FlipSprite()
+    /* public bool FlipSprite
     {
-        throw new System.NotImplementedException();
-    }
+        get => dir.x > 0 ? false : true;
+    } */
 }
