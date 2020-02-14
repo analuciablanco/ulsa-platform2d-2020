@@ -13,9 +13,14 @@ public class Score : MonoBehaviour
         txtScore = GetComponent<Text>();
     }
 
+    private void Start() 
+    {
+        
+    }
+
     public void AddPoints(int points)
     {
-        currentScore += points;
+        currentScore =+ points;
         txtScore.text = $"Score: {currentScore} pts";
     }
 }
