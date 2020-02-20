@@ -9,7 +9,8 @@ public class Player : Character2D
 
     void Start()
     {
-        
+        Gamemanager.instance.gameData.Player = this;
+        Gamemanager.instance.Save();
     }
 
     private void FixedUpdate() 
