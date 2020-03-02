@@ -1,31 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Platform2DUtils.MemorySystem;
+//using UnityEngine.SceneManagement;
 
 public class Gamemanager : MonoBehaviour
 {
+    
     public static Gamemanager instance;
-    [SerializeField] Score score;
-
-    public GameData gameData{ get; set; }
+    [SerializeField]
+    Score score;
 
     public Score Score { get => score; }
 
-    private void Awake() 
-    {
-        if (instance)
-       {
-           Destroy(gameObject);
-       }
-       else
-       {
-           instance = this;
-           //gameData = new GameData();
-       }
+    public GameData gameData { get; set; }
 
-       DontDestroyOnLoad(gameObject);   
+    void Awake()
+    {
+        
+        
+        if(instance)
+        {
+            Destroy(gameObject);
+        } else 
+        {
+
+            instance = this;
+            //gameData = new GameData();
+
+        }
+        
+        DontDestroyOnLoad(gameObject);
+
     }
 
     public void Save()
@@ -37,20 +43,23 @@ public class Gamemanager : MonoBehaviour
     {
         gameData = MemorySystem.LoadData();
     }
-
+    
     public void Delete()
     {
         MemorySystem.DeleteData();
     }
 
-    private void Start() 
+    void Start()
     {
-
+       /**/
         Delete();
         Load();
         Debug.Log(gameData.PlayerPos);
+        
 
-        //int scene = SceneManager.GetActiveScene().buildIndex;
-        //score.gameObject.SetActive(scene > 0);
-    }
+
+       /* int scene = SceneManager.GetActiveScene().buildIndex;
+        score.gameObject.SetActive(scene > 0);*/
+    }    
+
 }
